@@ -4,6 +4,14 @@ import { usePathname, useRouter } from "next/navigation"
 
 import { cn } from "@/lib/utils"
 
+import { LucideIcon } from "lucide-react"
+
+interface SidebarItemProps {
+    icon: LucideIcon
+    label: string
+    href: string
+}
+
 
 
 

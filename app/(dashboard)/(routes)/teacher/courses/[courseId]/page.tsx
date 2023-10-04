@@ -3,6 +3,7 @@ import { db } from "@/lib/db"
 import { redirect } from "next/navigation";
 import { IconBadge } from "@/components/icon-badge";
 import { LayoutDashboard } from "lucide-react";
+import { TitleForm } from "./_components/title-form";
 
 
 
@@ -62,6 +63,12 @@ const CourseIdPage = async ({
                         <h2 className="text-xl">
                             Customize your course
                         </h2>
+                    </div>
+                    <div>
+                        <TitleForm
+                            initialData={course}
+                            courseId={course.id}
+                        />
                     </div>
                 </div>
             </div>

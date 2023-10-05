@@ -20,15 +20,14 @@ import { toast } from "react-hot-toast";
 import { useRouter } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { Textarea } from "@/components/ui/textarea";
+import { Course } from "@prisma/client";
 
 const formSchema = z.object({
     description: z.string().min(1, {message: "Description is required"}),
 })
 
 interface DescriptionFormProps {
-    initialData: {
-        description: string;
-    };
+    initialData: Course;
     courseId: string;
 }
 
@@ -44,7 +43,7 @@ export const DescriptionForm = (
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
         defaultValues: {
-            description: initialData.description,
+            description: initialData?.description || "",
         }
     });
 

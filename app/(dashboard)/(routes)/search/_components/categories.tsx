@@ -24,7 +24,7 @@ const iconMap: Record<Category["name"], IconType> = {
     "Accounting": FcSalesPerformance,
     "Computer Science": FcMultipleDevices,
     "Filming": FcFilmReel,
-    "Engenieering": FcEngineering,
+    "Engineering": FcEngineering,
 }
 
 export const Categories = ({
